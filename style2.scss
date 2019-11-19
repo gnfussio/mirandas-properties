@@ -1,0 +1,770 @@
+
+@import "compass/reset";
+@import "compass/css3";
+@import "mixins.scss";
+@import "vistas.scss";
+@import "responsive.scss";
+@import "https://use.fontawesome.com/releases/v5.8.1/css/all.css";
+@import "awesome/fontawesome.scss";
+@import "awesome/solid.scss";
+@import "awesome/brands.scss";
+
+body{
+  background: #fff;
+}
+body, a, li, label{
+  font-family: $tipo1;
+}
+ul li{
+  list-style: disc;
+  margin-left: 20px;
+}
+
+#pre-header{
+  display: none
+}
+
+#top-inside{
+  background: $grisClaro;
+  #block-block-4{
+    text-align: center;
+    padding: 16px;
+    .col-md-1{
+      padding-top: 16px;
+    }
+    .container{
+      .col-md-6{
+        text-align: left;
+      }
+      .col-md-2{
+        @include flexo3;
+        a{
+          color: $grisOscuro;
+          font-size: 0.8em;
+          padding-left: 10px;
+        }
+        .fas{
+          &:hover{
+            color: $rojo;
+          }
+        }
+      }
+    }
+  }
+  p{
+    display: inline-block;
+    a{
+      color: $grisOscuro;
+      font-size: 0.8em;
+      text-decoration: none;
+    }
+  }
+}
+
+.front{
+  .page-title{color: $azul;}
+}
+
+#block-views-propiedades-nuevas-block-1{
+  h2{color: $azul;}
+}
+
+// menu top
+
+#block-menu-menu-top-menu{
+  h2 { display: none; }
+  .content{
+    ul.menu{
+      @include display-flex(flex);
+      @include justify-content(flex-end);
+      li{
+        a{
+          font-size: 15px;
+          @include transicion(300ms);
+          &:hover{
+            background: $azul;
+            color: $blanco;
+          }
+        }
+      }
+    }
+  }
+}
+
+#header-top-inside{
+  .row{
+    @include flexo3;
+    @include flex-wrap(wrap);
+  }
+}
+
+// Banner textos
+
+.wrapSliderTit {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    @include flexo3;
+    @include flex-wrap(wrap);
+    @include align-content(center);
+    .peqTit, .grnTit{
+      color: $blanco;
+      width:100%;
+      text-align: center;
+      text-transform: uppercase;
+    }
+    .grnTit{
+      font-weight: bold;
+      font-size: 3em;
+    }
+    .peqTit{
+      font-weight: 100;
+      font-size:2em;
+      max-width: 60%;
+      min-width: 300px;
+      margin: 0 auto;
+    }
+    .raya{
+      width: 100%;
+      height: 2px;
+      margin: 20px auto 0 auto;
+      text-align: center;
+      a{
+        color: $blanco;
+        margin: 0 auto;
+        background: $rojo;
+        padding: 8px 12px;
+        text-decoration: none;
+        @include border-radius(4px);
+        @include transicion(300ms);
+        &:hover{
+          background: lighten($rojo, 30%);
+        }
+      }
+    }
+}
+
+/// fotos provincias en front page
+
+section.wrapProvincias {
+	display: grid;
+	display: -ms-grid;
+	grid-template-columns: repeat(5, 1fr);
+	grid-gap: 10px;
+	margin-top: 2px;
+	.colProv{
+		img{
+			width: 100%;
+		}
+	}
+	.itemProvincias{
+		position: relative;
+		h3, h4 {
+			  position: absolute;
+		    color: #fff;
+		    width: 100%;
+		    text-align: center;
+		    text-transform: uppercase;
+		    text-shadow: 1px 1px 1px #000;
+		}
+		h3{
+			font-size: 1.6em;
+			font-weight: bolder;
+			top: 30px;
+		}
+		h4{
+			font-size: 1.2em;
+			top: 57px;
+		}
+		img{
+			@include transition(300ms);
+		}
+		&:hover{
+			img{
+				opacity: 0.7;
+			}
+		}
+	}
+	.itemProvincias:nth-child(1){
+		grid-column: 1 / 2;
+		grid-row: 1 / 3;
+	}
+	.itemProvincias:nth-child(2){
+		grid-column: 2 / 3;
+	}
+	.itemProvincias:nth-child(3){
+		grid-column: 3 / 4;
+	}
+	.itemProvincias:nth-child(4){
+		grid-column: 4 / 5;
+	}
+	.itemProvincias:nth-child(5){
+		grid-column: 5 / 6;
+		grid-row: 1 / 3;
+	}
+	.itemProvincias:nth-child(6){
+		grid-column: 2 / 4;
+		grid-row: 2 / 3;
+	}
+	.itemProvincias:nth-child(7){
+		grid-column: 4 / 5;
+		grid-row: 2 / 3;
+	}
+}
+
+// *******************************************//
+// **********  Contenido propiedades ******** //
+// *******************************************//
+
+.node-type-propiedades{
+  .page-title{
+    display: none;
+  }
+  #block-system-main{
+    margin-top: 30px;
+  }
+}
+
+.node-propiedades{
+  margin-bottom: 30px;
+
+  .col-sm-6{
+    .field{
+      margin-bottom: 14px;
+      label{
+        font-size: 0.9em;
+      }
+      div, a, p{
+        font-size: 0.92em;
+        line-height: 1.3em;
+      }
+    }
+  }
+  .col-sm-6{
+    .field{
+      margin-bottom: 18px;
+      .field-item{
+        margin-top: 4px;
+      }
+    }
+  }
+
+  .field-name-field-gallery{
+    .field-items{
+      .field-item{
+        min-width: 100px;
+        overflow: hidden;
+          ul.lightgallery{
+            display: grid;
+            display: -ms-grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-column-gap: 4px;
+            grid-gap: 4px;
+            li{
+              list-style: none;
+              margin: 0;
+              padding: 0;
+              max-height: 390px;
+              overflow: hidden;
+              a{
+                display: grid;
+                overflow: hidden;
+                height: 100%;
+                img{
+                  @include transicion(300ms);
+                  &:hover{
+                    @include transform(scale(1.3));
+                    opacity: 0.8;
+                  }
+                }
+              }
+            }
+
+            li:nth-child(10) ~ li{
+              display: none;
+            }
+
+            li:nth-child(1){
+              grid-column: 1 / 3;
+              grid-row: 1 / 4;
+              img{
+                @include transform(scale(2.1));
+                &:hover{
+                    @include transform(scale(2.3));
+                }
+              }
+            }
+            li:nth-child(2){
+              grid-column: 3 / 4;
+              grid-row: 1 / 2;
+              height: 128px;
+            }
+            li:nth-child(3){
+              grid-column: 3 / 4;
+              grid-row: 2 / 3;
+              height: 128px;
+            }
+            li:nth-child(4){
+              grid-column: 3 / 4;
+              grid-row: 3 / 4;
+              height: 128px;
+            }
+            li:nth-child(5){
+              grid-column: 1 / 2;
+              grid-row: 4 / 5;
+              height: 128px;
+            }
+            li:nth-child(6){
+              grid-column: 1 / 2;
+              grid-row: 5 / 6;
+              height: 128px;
+            }
+            li:nth-child(7){
+              grid-column: 2 / 4;
+              grid-row: 4 / 6;
+              max-height: 260px;
+              img{
+                @include transform(scale(2.1));
+                &:hover{
+                    @include transform(scale(2.3));
+                }
+              }
+            }
+            li:nth-child(8){
+              grid-column: 1 / 2;
+              grid-row: 6 / 7;
+            }
+            li:nth-child(9){
+              grid-column: 2 / 3;
+              grid-row: 6 / 7;
+            }
+            li:nth-child(10){
+              grid-column: 3 / 4;
+              grid-row: 6 / 7;
+            }
+        }
+      }
+    }
+  }
+
+  .field-name-title{
+    h1{
+      font-weight: bold;
+      color: $azul;
+      font-size: 1.7em;
+      line-height: 25px;
+    }
+  }
+
+  .field-name-field-descripci-n{
+      p{
+        font-size: 1.1em!important;
+        line-height: 18px;
+        margin-bottom: 12px;
+        strong{
+          font-weight: bold;
+        }
+      }
+  }
+  .field-name-field-precio-en-colones,
+  .field-name-field-precio-dolares{
+    width: 50%;
+    float: left;
+    font-size: 1.4em;
+    color: $rojo;
+  }
+  .field-name-field-precio-en-colones{
+    .field-item{
+      &:before{
+        @extend %fa-icon;
+        @extend .fas;
+        content: "\f53a";
+        margin-right: 6px;
+        color: $rojo;
+        font-size: 1.2em;
+      }
+    }
+  }
+  .field-name-field-precio-dolares{
+    .field-item{
+      &:before{
+        @extend %fa-icon;
+        @extend .fas;
+        content: "\f155";
+        margin-right: 6px;
+        color: $rojo;
+        font-size: 1.2em;
+      }
+    }
+  }
+  .field-name-field-propiedad-nueva{
+
+  }
+  .field-name-field-tipo-de-propiedad{
+    .field-item{
+      &:before{
+        @extend %fa-icon;
+        @extend .fas;
+        content: "\f084";
+        margin-right: 6px;
+        color: $gris;
+        font-size: 1.2em;
+      }
+    }
+  }
+  .field-name-field-habitaciones{
+    .field-item{
+      &:before{
+        @extend %fa-icon;
+        @extend .fas;
+        content: "\f236";
+        margin-right: 6px;
+        color: $gris;
+        font-size: 1.2em;
+      }
+    }
+  }
+
+  .field-name-field-tipo-de-negocio{
+    .field-item{
+      &:before{
+        @extend %fa-icon;
+        @extend .fas;
+        content: "\f653";
+        margin-right: 6px;
+        color: $gris;
+        font-size: 1.2em;
+      }
+    }
+  }
+  .field-name-field-garage{
+    .field-item{
+      &:before{
+        @extend %fa-icon;
+        @extend .fas;
+        content: "\f1b9";
+        margin-right: 6px;
+        color: $gris;
+        font-size: 1.2em;
+      }
+    }
+  }
+
+  .field-name-field-ba-os{
+    .field-item{
+      &:before {
+        @extend %fa-icon;
+        @extend .fas;
+        content: "\f2cd";
+        margin-right: 6px;
+        color: $gris;
+        font-size: 1.2em;
+      }
+    }
+  }
+
+  .field-name-field--rea-de-construcci-n{
+    .field-item{
+      &:before {
+        @extend %fa-icon;
+        @extend .fas;
+        content: "\f807";
+        margin-right: 6px;
+        color: $gris;
+        font-size: 1.2em;
+      }
+    }
+  }
+
+  .field-name-field--rea-del-terreno{
+    .field-item{
+      &:before {
+        @extend %fa-icon;
+        @extend .fas;
+        content: "\f568";
+        margin-right: 6px;
+        color: $gris;
+        font-size: 1.2em;
+      }
+    }
+  }
+
+  .field-name-field-pisos{
+    .field-item{
+      &:before {
+        @extend %fa-icon;
+        @extend .fas;
+        content: "\f1ad";
+        margin-right: 6px;
+        color: $gris;
+        font-size: 1.2em;
+      }
+    }
+  }
+  .field-name-field-c-digo{
+    .field-item{
+      &:before {
+        @extend %fa-icon;
+        @extend .fas;
+        content: "\f02a";
+        margin-right: 6px;
+        color: $gris;
+        font-size: 1.2em;
+      }
+    }
+  }
+
+  .field-name-field-caracteristicas-propiedad{
+    .field-item{
+      width: 25%;
+      float: left;
+      min-width: 100px;
+      &:before {
+        @extend %fa-icon;
+        @extend .fas;
+        content: "\f00c";
+        margin-right: 6px;
+        color: $gris;
+        font-size: 1em;
+      }
+    }
+  }
+
+  .field-name-field-provincia,
+  .field-name-field-caracteristicas-propiedad,
+  .field-name-field-descripci-n {
+      border-top: solid 1px #999;
+      padding-top: 20px;
+  }
+
+  .field-name-field-cantones-de-san-jos-,
+  .field-name-field-cantones-de-heredia,
+  .field-name-field-cantones-de-alajuela,
+  .field-name-field-cantones-de-cartago,
+  .field-name-field-cantones-de-guanacaste,
+  .field-name-field-cantones-de-heredia,
+  .field-name-field-cantones-de-lim-n, {
+
+  }
+
+}
+
+// ********************************************************//
+// ***************  webform propiedades  ****************** //
+// ********************************************************//
+
+#block-webform-client-block-131{
+  h2{
+    text-align: center;
+  }
+}
+
+// ************************************************//
+// ***************  basic page  ****************** //
+// ************************************************//
+
+.node-type-page{
+  .field-type-text-with-summary{
+    h2{
+      font-size: 1.4em;
+      margin: 12px 0;
+    }
+    p, p ul li, ul li{
+      font-size: 0.9em;
+      line-height: 18px;
+    }
+  }
+}
+
+.foto-locacion{
+  position: relative;
+  .blogTit{
+    width: 100%;
+    position: absolute;
+    text-align: center;
+    color: $blanco;
+    font-weight: bold;
+    font-size: 2.5em;
+    margin-top: 5%;
+    @include text-shadow(2px 2px 2px #000);
+  }
+}
+
+// ocultar page title en vistas de Provincias
+
+.page-taxonomy-term-6,
+.page-taxonomy-term-2,
+.page-taxonomy-term-3,
+.page-taxonomy-term-5,
+.page-taxonomy-term-4,
+.page-taxonomy-term-7,
+.page-taxonomy-term-1 {
+  .page-title{
+    display:none
+  }
+}
+
+// no encontró lo que buscaba block
+
+#block-block-9{
+  padding: 40px 0;
+  background: $azul;
+  a.btn-emergency{
+    color: $blanco;
+    padding: 12px;
+    border: solid 2px $blanco;
+    border-radius: 11px;
+    &:hover{
+      background: $blanco;
+      color: $negro;
+      text-decoration: none;
+    }
+  }
+}
+
+
+/************************/
+// seccion Servicios
+/************************/
+
+.wrapSecServicios{
+	.wrapItemsServ{
+		@include flexo3;
+		@include flex-wrap(wrap);
+		@include justify-content(space-around);
+		.item{
+			width: 21%;
+      min-width: 200px;
+			text-align: center;
+      margin-bottom: 20px;
+			figure{
+				img{
+					width: 100%;
+					max-width: 100px;
+          margin: 0 auto;
+				}
+			}
+			p{
+        margin: 12px 0;
+			}
+		}
+	}
+	.wrapLista{
+		ul{
+			li{
+					list-style: disc!important;
+					list-style-type: disc!important;
+			    margin-bottom: 14px;
+			    margin-left: 20px;
+			}
+		}
+	}
+}
+
+/*****************************/
+// Formulario de conteactenos
+/*****************************/
+
+.webform-client-form-129, .webform-client-form-130{
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+.node-type-webform{
+  .page-title{
+    text-align: center;
+  }
+}
+
+/**************************************/
+// Formulario de deseo más información
+/**************************************/
+
+#block-block-6{
+  p{
+    .btn-info{
+      @include transicion(300ms);
+      background: $rojo!important;
+      &:hover{
+        opacity:0.8;
+      }
+    }
+  }
+}
+
+// *******************************************//
+// ***************  footer  ****************** //
+// *******************************************//
+
+#subfooter {
+  .wrapFooterInfo{
+		  @include display-flex(flex);
+		  @include align-items(center);
+		  @include justify-content(flex-end);
+		.item{
+      cursor: pointer;
+			figure{
+				padding: 20px;
+				.iconitem, .texitem{
+					display: inline-block;
+					a{
+						color: $blanco;
+						text-transform: uppercase;
+					}
+				}
+				.iconitem{
+					margin-right: 12px;
+					a{
+						img{
+
+						}
+					}
+				}
+				.texitem{
+					a{
+
+					}
+				}
+			}
+      &:hover{
+        i, a{
+          color: $turquesa!important;
+        }
+      }
+		}
+		.item:nth-child(3){
+			a{
+				color: $blanco;
+				padding: 10px;
+				text-transform: uppercase;
+				border: solid 2px $blanco;
+				@include border-radius(3px);
+				@include transicion(300ms);
+				font-weight: 700;
+				&:hover{
+					background: $blanco;
+					color: $negro;
+				}
+			}
+		}
+
+		.item:nth-child(1), .item:nth-child(2), .item:nth-child(3){
+			border-right: solid 1px $blanco;
+		}
+	}
+}
+
+.feed-icon{display: none}
+
+#block-block-10{
+  table{
+    a{
+      font-size: 0.85em;
+      color:$azul;
+      &:hover{
+        color: $rojo;
+      }
+    }
+  }
+}

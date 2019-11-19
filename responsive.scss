@@ -1,0 +1,338 @@
+
+@import "compass/css3";
+@import "mixins.scss";
+
+@media only screen and (min-width: 1440px) {
+
+}
+@media only screen and (max-width: 1440px) { // Laptop L
+
+}
+
+@media only screen and (max-width: 1024px) { // Laptop
+
+}
+
+@media only screen and (max-width: 992px) {
+
+}
+
+@media only screen and (min-width: 769px) {
+
+  #block-block-10{
+    .table{
+      margin-top: 100px;
+    }
+  }
+
+  // boton toggle del menu
+  #block-block-8{
+    display: none!important;
+   }
+
+   #block-menu-menu-top-menu{
+     display:block;
+   }
+}
+
+@media only screen and (max-width: 768px) {
+
+  #block-block-9 a.btn-emergency{
+    display: block;
+    width: 225px;
+    margin: 0 auto 20px auto;
+    border-radius: 2em!important;
+  }
+
+  section.wrapProvincias{
+    display: block!important;
+    .itemProvincias{
+      overflow: hidden;
+      width: 50%;
+      float: left;
+      h3{
+        font-size: 1.1em!important;
+      }
+      h4{
+        font-size: 0.9em!important;
+      }
+      figure{
+        max-height: 160px;
+        a{
+          display: block!important;
+          img{
+            @include wyh;
+          }
+        }
+      }
+    }
+  }
+
+  .col-md-9,
+  .col-md-3{
+    display: block;
+    width: 100%!important;
+  }
+
+  #block-block-2{  // logo
+    a{
+      display: block;
+      margin: 0 auto;
+      img{
+        margin: 0 auto;
+      }
+    }
+  }
+
+  #block-menu-menu-top-menu{
+    display:none;
+  }
+  #block-block-8{
+    display: block!important;
+   }
+  .node-type-propiedades{
+    h1.page-title{
+      display: block!important;
+      color: $azul;
+    }
+  }
+  .node-propiedades {
+    .field-name-field-gallery{
+      .field-items{
+        .field-item{
+          ul.lightgallery{
+            display: block!important;
+            li{
+              width: 50%;
+              float: left;
+              box-sizing: border-box;
+              border: solid 2px $blanco;
+              height: 200px!important;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  #block-views-propiedades-sugeridas-block {
+      .view-content{
+        display: block!important;
+        .views-row{
+          width: 50%!important;
+          padding: 0 8px!important;
+        }
+      }
+  }
+
+  #subfooter .wrapFooterInfo{
+    display: block!important;
+    .item{
+      width: 100%!important;
+    }
+  }
+
+  // block-menu-menu-top-menu
+
+  #block-menu-menu-top-menu{
+    .content{
+      ul.menu{
+        display: block!important;
+        li {
+          width: 100%!important;
+          border-bottom: solid 1px $gris;
+          text-align: center!important;
+          a{
+
+            }
+          }
+        }
+      }
+    }
+
+    .node-propiedades .field-name-title h1 {
+      display: none!important;
+    }
+
+}
+
+@media only screen and (max-width: 480px) {
+
+  .wrapSliderTit{
+    height: 50%!important;
+    .raya a{
+      font-size: 6em!important;
+    }
+  }
+
+  #block-block-9 a.btn-emergency{
+    font-size: 0.7em!important;
+  }
+
+  #block-block-6 p .btn-info{
+    font-size: 0.8em!important;
+  }
+
+  h1.page-title {
+    font-size: 22px!important;
+    text-align: center!important;
+    line-height: 26px!important;
+  }
+
+  section.wrapProvincias{
+    display: block!important;
+    .itemProvincias{
+      overflow: hidden;
+      width: 100%;
+      float: inherit!important;
+    }
+    figure{
+      max-height: 200px;
+    }
+  }
+
+  .node-propiedades {
+    .field-name-field-gallery{
+      .field-items{
+        .field-item{
+          ul.lightgallery{
+            li{
+              height: 140px!important;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  #block-views-propiedades-sugeridas-block {
+      .view-content{
+        .views-row{
+          width: 100%!important;
+          padding: 0!important;
+        }
+      }
+  }
+
+  #block-views-provincias-block .view-provincias{
+    .view-content{
+      display: block!important;
+      .views-row{
+        display: block!important;
+        width: 100%!important;
+        text-align: center!important;
+        margin: 7px 0;
+        border-bottom: solid 1px $gris;
+        a, span{
+          display: block!important;
+        }
+        a{
+          padding: 4px 0 6px 0!important;
+        }
+      }
+    }
+  }
+
+  .foto-locacion{
+    .blogTit{
+      font-size: 1.3em!important;
+    }
+  }
+
+  .view-propiedades,
+  .view-taxonomy-term,
+  .view-propiedades-nuevas,
+  .view-propiedades-front-page,
+  .view-propiedades-con-descuento{
+    .view-filters{
+    }
+    .view-content{
+      .views-row{
+        width: 100%!important;
+        .views-field-field-gallery{
+          width: 30%!important;
+          height: 60px;
+          position: absolute!important;
+          ul{
+            li{
+              a{
+                img{
+                  min-height:inherit!important;
+                }
+              }
+            }
+          }
+        }
+        .views-field-title,
+        .views-field-field-precio-en-colones,
+        .views-field-field-propiedad-nueva,
+        .views-field-field-precio-dolares,
+        .views-field-view-node{
+          float: left;
+          margin-left: 35%;
+          width: 60%!important;
+          position: inherit!important;
+          text-align: left!important;
+          top:inherit!important;
+          left:inherit!important;
+        }
+        .views-field-field-propiedad-nueva{
+          margin-left: 43.5%;
+        }
+        .views-field-view-node{
+          margin-top: 14px;
+          a{
+            padding: 11px 22px!important;
+            border-radius: 2em!important;
+            font-size: 0.7em!important;
+          }
+        }
+        .views-field-title{
+          margin-top: 0!important;
+          min-height: inherit!important;
+          a{
+
+          }
+        }
+      }
+      .views-row:nth-child(1),
+      .views-row:nth-child(2) {
+        .views-field-field-gallery{
+
+        }
+      }
+    }
+    .views-field-field-ba-os, .views-field-field-habitaciones {
+
+    }
+    .views-field-field-ba-os{
+      .field-content{
+
+      }
+    }
+    .views-field-field-habitaciones{
+      a{
+
+      }
+    }
+  }
+
+  #block-views-propiedades-nuevas-block-1{
+    h2{
+      font-size: 22px!important;
+    }
+  }
+
+  #block-block-4{
+    display: none!important;
+  }
+
+  .btn-lg{
+    border-radius: 2em!important;
+  }
+
+}
+
+@media only screen and (max-width: 320px){
+
+}

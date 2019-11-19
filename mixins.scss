@@ -1,0 +1,50 @@
+
+@import "https://fonts.googleapis.com/css?family=Open+Sans:400,700";
+
+$blanco : #FFF;
+$negro : #000;
+$gris : #666;
+$grisOscuro: #333;
+$grisClaro : #efefef;
+$rojo: #b50100;
+$azul: #264aba;
+$turquesa: #00c4cc;
+
+$tipo1: 'Open Sans', sans-serif;
+
+@mixin flexo{
+	@include display-flex(flex);
+	@include align-items(flex-end);
+	@include justify-content(center);
+}
+
+@mixin flexo2{
+	@include display-flex(flex);
+	@include align-items(start);
+	@include justify-content(center);
+}
+
+@mixin flexo3{
+	@include display-flex(flex);
+	@include align-items(center);
+	@include justify-content(center);
+}
+
+@mixin wyh {
+	width: 100%;
+	height: auto;
+}
+
+@mixin transicion($val){
+	-webkit-transition: $val;
+	-moz-transition: $val;
+	-o-transition: $val;
+	transition: $val;
+}
+
+@mixin background($val){
+	 -webkit-background-size: $val;
+	 -moz-background-size: $val;
+	 -o-background-size: $val;
+	 background-size: $val;
+}

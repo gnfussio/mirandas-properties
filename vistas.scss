@@ -1,0 +1,441 @@
+
+@import "compass/css3";
+@import "mixins.scss";
+@import "awesome/fontawesome.scss";
+@import "awesome/solid.scss";
+@import "awesome/brands.scss";
+
+// ******** ******  vistas propiedades y taxonomias  *****///
+.page-propiedades{
+  .page-title{display: none}
+}
+.page-taxonomy-term, .view-propiedades-nuevas, .view-propiedades-con-descuento{
+  .page-title{
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: 2em;
+  }
+}
+.page-taxonomy-term{
+  .page-title{margin-bottom: 50px;}
+}
+
+#block-views-hagamos-numeros-bloque-block{
+  h2{
+    display: none;
+  }
+}
+
+.view-propiedades,
+.view-taxonomy-term,
+.view-propiedades-nuevas,
+.view-propiedades-front-page,
+.view-propiedades-con-descuento{
+  .view-filters{
+    margin-bottom: 40px;
+  }
+  .view-content{
+    @include display-flex(flex);
+    @include justify-content(space-between);
+    @include flex-wrap(wrap);
+    .views-row{
+      max-width: 355px;
+      position: relative;
+      overflow: hidden;
+      padding: 0 0 22px 0;
+      margin-bottom: 22px;
+      border-bottom: 1px solid $grisClaro;
+      .views-field-field-gallery{
+        overflow: hidden;
+        max-height: 260px;
+        ul{
+          li{
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            a{
+              display: block;
+              img{
+                @include wyh;
+                @include transicion(300ms);
+                min-height: 280px;
+              }
+            }
+          }
+        }
+      }
+      .views-field-field-precio-dolares {
+        padding: 12px 0;
+        &:before {
+          @extend %fa-icon;
+          @extend .fas;
+          content: "\f155";
+          margin-right: 6px;
+          float:left;
+          font-size: 1.8em;
+          color: $rojo;
+        }
+        .field-content{
+          font-size: 1.8em;
+          font-weight: bold;
+          color: $rojo;
+        }
+      }
+      .views-field-field-precio-en-colones,
+      .views-field-field-precio-dolares {
+        margin-bottom: 12px;
+      }
+      .views-field-title{
+        margin: 12px 0;
+        a{
+          color: $negro;
+          text-decoration: none;
+          font-weight: bold;
+          @include transicion(300ms);
+          &:hover{
+            color: $gris;
+          }
+        }
+      }
+      .views-field-view-node{
+        display: inline-block;
+        text-align: right;
+        span{
+          a{
+            font-size: 12px;
+            color: $blanco;
+            padding: 4px 6px;
+            text-decoration: none;
+            background: $rojo;
+            @include border-radius(3px);
+            @include transicion(300ms);
+            &:hover{
+              background: lighten($azul, 20%);
+            }
+          }
+        }
+      }
+      .views-field-field-propiedad-nueva{
+        position: absolute;
+        top:20px;
+        right: 30px;
+      }
+      .views-field-field-propiedad-nueva{
+          .field-content{
+            padding: 6px 8px;
+            display: inline-block;
+            background: $rojo;
+            color: $blanco;
+            font-size: 12px;
+            text-decoration: none;
+            @include border-radius(3px);
+            @include transicion(300ms);
+            &:hover{
+              background: darken($rojo, 30%);
+            }
+          }
+      }
+      .views-field-field-descuento{
+        position: absolute;
+        top: 20px;
+        left: -60px;
+        padding: 0 60px;
+        text-align: center;
+        background: $rojo;
+        transform: rotateZ(-35deg);
+        @include transicion(300ms);
+        .field-content, .views-label-field-descuento{
+          padding: 6px 8px;
+          display: inline-block;
+          color: $blanco;
+          font-size: 12px;
+          text-decoration: none;
+          @include border-radius(3px);
+        }
+        &:hover{
+          background: darken($rojo, 30%);
+        }
+      }
+      &:hover{
+        img{
+          @include transform(scale(1.2));
+        }
+      }
+    }
+  }
+  .views-field-field-ba-os, .views-field-field-habitaciones{
+    display: inline-block;
+    margin-right: 16px;
+  }
+  .views-field-field-ba-os{
+    .field-content{
+      color: $azul;
+      &:before {
+        @extend %fa-icon;
+        @extend .fas;
+        content: "\f2cd";
+        margin-right: 6px;
+      }
+    }
+  }
+  .views-field-field-habitaciones{
+    a{
+      &:before{
+        @extend %fa-icon;
+        @extend .fas;
+        content: "\f236";
+        margin-right: 6px;
+      }
+    }
+  }
+
+}
+
+.front .page-title{
+  font-size: 2.2em;
+  font-weight: bold;
+  text-align: center;
+  margin: 30px 0 30px 0
+}
+
+#block-views-propiedades-nuevas-block-1{
+  h2{
+    font-size: 2.2em;
+    font-weight: bold;
+    text-align: center;
+    margin: 30px 0 40px 0
+  }
+}
+
+// Buscador filtros
+
+.views-exposed-widgets{
+  @include flexo3;
+  @include flex-wrap(wrap);
+  @include align-items(baseline);
+  margin-right: 10px;
+  #edit-field-cantones-de-san-jos-tid-wrapper,
+  #edit-field-cantones-de-puntarenas-tid-wrapper,
+  #edit-field-cantones-de-alajuela-tid-wrapper,
+  #edit-field-cantones-de-heredia-tid-wrapper,
+  #edit-field-cantones-de-guanacaste-tid-wrapper,
+  #edit-field-cantones-de-cartago-tid-wrapper,
+  #edit-field-cantones-de-lim-n-tid-wrapper {
+    display: none;
+  }
+  .views-exposed-widget{
+    min-width: 24%;
+    .views-widget{
+      width: 100%;
+    }
+  }
+  .views-widget-filter-field_precio_dolares_value{
+    position: relative;
+    &:before{
+      @extend %fa-icon;
+      @extend .fas;
+      content: "\f155";
+      margin-right: 6px;
+      color: $gris;
+      font-size: 1.2em;
+      position: absolute;
+      top: 20px;
+      left: -18px;
+    }
+  }
+  .views-submit-button{
+    .form-submit{ // Boton
+      margin: 0;
+      background: $rojo;
+      @include transition(300ms);
+      &:hover{
+        background: lighten($rojo, 30px);
+      }
+    }
+  }
+  // boton de Buscador
+  #edit-submit-propiedades, #edit-submit-propiedades-front-page{
+      width: 100%;
+  }
+  select {
+    font-family: sans-serif;
+    padding: 12px;
+    cursor: pointer;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: #fff;
+    background-image: url(data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3…c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E),linear-gradient(to bottom, #ffffff 0%,#e5e5e5 100%);
+    background-repeat: no-repeat, repeat;
+    background-position: right .7em top 50%, 0 0;
+    background-size: .65em auto, 100%;
+  }
+  select::-ms-expand {
+    display: none;
+  }
+  select:hover {
+      border-color: #888;
+  }
+  select:focus {
+      border-color: #aaa;
+      box-shadow: 0 0 1px 3px rgba(59, 153, 252, .7);
+      box-shadow: 0 0 0 3px -moz-mac-focusring;
+      color: #222;
+      outline: none;
+  }
+  select option {
+      font-weight:normal;
+  }
+  label{
+    display: none;
+  }
+}
+
+.mostrar{
+  display: inherit!important;
+}
+
+// Propiedades sugeridas
+
+#block-views-propiedades-sugeridas-block {
+  h2{
+    font-size: 1.4em;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  .view-content{
+    @include flexo2;
+    @include flex-wrap(wrap);
+    @include justify-content(space-between);
+    .views-row{
+      width: 23%;
+      position: relative;
+      padding-bottom: 22px;
+      margin-bottom: 22px;
+      border-bottom: 1px solid $grisClaro;
+      &:hover{
+        .views-field-field-gallery{
+          img{
+            @include transform(scale(1.6))
+          }
+        }
+      }
+    }
+  }
+  .views-field-field-gallery{
+    .item-list{
+      ul{
+        li{
+          list-style: none;
+          overflow: hidden;
+          height: 150px;
+          margin: 0;
+          padding: 0;
+          a{
+            img{
+              @include wyh;
+              @include transicion(300ms);
+              @include transform(scale(1.3))
+            }
+          }
+        }
+      }
+    }
+  }
+  .views-field-title{
+    margin-bottom: 14px;
+    span{
+      a{
+        color: $negro;
+        text-decoration: none;
+        font-weight: bold;
+        @include transicion(300ms);
+        &:hover{
+          color: $turquesa;
+        }
+      }
+    }
+  }
+  .views-field-field-ba-os, .views-field-field-habitaciones{
+    display: inline-block;
+    margin-right: 16px;
+  }
+  .views-field-field-ba-os{
+    .field-content{
+      color: $azul;
+      &:before {
+        @extend %fa-icon;
+        @extend .fas;
+        content: "\f2cd";
+        margin-right: 6px;
+      }
+    }
+  }
+  .views-field-field-habitaciones{
+    a{
+      &:before{
+        @extend %fa-icon;
+        @extend .fas;
+        content: "\f236";
+        margin-right: 6px;
+      }
+    }
+  }
+  .views-field-field-tipo-de-negocio, .views-field-field-tipo-de-propiedad{
+      position: absolute;
+      .field-content{
+        a{
+          padding: 6px 8px;
+          display: inline-block;
+          color: $blanco;
+          font-size: 12px;
+          text-decoration: none;
+          @include border-radius(3px);
+          @include transicion(300ms);
+          &:hover{
+            background: darken($rojo, 30%);
+          }
+        }
+      }
+  }
+  .views-field-field-tipo-de-negocio{
+    top:20px;
+    left: 15px;
+    .field-content{
+        background: $rojo;
+    }
+  }
+  .views-field-field-tipo-de-propiedad{
+    top:20px;
+    right: 15px;
+    .field-content{
+        background: darken($turquesa, 15%);
+    }
+  }
+  .views-field-field-precio-en-colones{
+    margin-bottom: 16px;
+  }
+}
+
+// Vista Provincias taxonomías
+#block-views-provincias-block{
+  margin-top: 20px;
+  border-top: solid 1px $gris;
+}
+.view-provincias{
+  .view-content{
+    @include flexo3;
+    .views-row{
+      margin: 0 12px;
+      span{
+        a{
+          color: $gris;
+          &:hover{
+            color: $turquesa;
+          }
+        }
+      }
+    }
+  }
+}
